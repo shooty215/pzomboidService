@@ -1,6 +1,0 @@
-FLAG=1
-PZUSER=pzuser
-PATH=/home/pzuser/
-NAME=servertest-mods
-RAM_MIN=1024
-RAM_MAX=2816

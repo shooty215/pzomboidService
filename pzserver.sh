@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
 # handling file inputs
-FLAG=$1
-SAVEGAME_NAME=$2
-RAM_MIN=$3
-RAM_MAX=$4
-SERVER_DIR=$5
+FLAG=grep -o '"PZUSER": "[^"]*' pzServiceConfig.json | grep -o '[^"]*$'
+SAVEGAME_NAME=grep -o '"PZUSER": "[^"]*' pzServiceConfig.json | grep -o '[^"]*$'
+RAM_MIN=grep -o '"PZUSER": "[^"]*' pzServiceConfig.json | grep -o '[^"]*$'
+RAM_MAX=grep -o '"PZUSER": "[^"]*' pzServiceConfig.json | grep -o '[^"]*$'
+SERVER_DIR=grep -o '"PZUSER": "[^"]*' pzServiceConfig.json | grep -o '[^"]*$'
 
 # determining procedure via utility flag
 case $FLAG in
