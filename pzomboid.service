@@ -1,0 +1,17 @@
+[Unit]
+Description=Handles Project Zomboid Server Application
+Wants=syslog.target network.target network-online.target
+
+[Service]
+Type=simple
+User=$USER
+Group=$USER
+WorkingDirectory=$PATH
+ExecStart=/usr/local/bin/pzserver $FLAG $NAME $RAM_MIN $RAM_MAX $PATH
+Sockets=pzomboid.socket
+StandardInput=socket
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

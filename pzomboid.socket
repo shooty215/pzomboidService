@@ -1,0 +1,5 @@
+[Unit]
+PartOf=pzomboid.service
+
+[Socket]
+ListenFIFO=%t/pzomboid.stdin
