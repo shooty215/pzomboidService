@@ -6,6 +6,11 @@ Make sure to edit the settings in /etc/systemd/system/pzomboid.service.d/overrid
 Install and mod-addition functionalities are yet to be implemented.
 
 ## USAGE:
+
+# deploy service
+bash deploy.sh
+bash undeploy.sh
+
 # manage server
 systemctl start|restart|stop|status pzomboid.service
 
