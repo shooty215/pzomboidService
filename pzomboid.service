@@ -3,7 +3,7 @@ Description=Handles Project Zomboid Server Application
 Wants=syslog.target network.target network-online.target
 
 [Service]
-EnvironmentFile=/etc/systemd/system/pzomboid.service.d/override.conf
+EnvironmentFile=-/etc/systemd/system/pzomboid.service.d/override.conf
 Type=simple
 User=$PZUSER
 Group=$PZUSER
