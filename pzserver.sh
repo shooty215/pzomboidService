@@ -18,7 +18,7 @@ case $FLAG in
 
  1)
   echo "starting update procedure for application and mods"
-  steamcmd +login anonymous +app_update 380870 validate +quit
+  steamcmd +login anonymous +app_update 380870 +validate +quit
   echo "starting project zomboid server"
   cd ${SERVER_DIR}.steam/steamapps/common/Project\ Zomboid\ Dedicated\ Server/
   /bin/bash start-server.sh -Xms${RAM_MIN}m -Xmx${RAM_MAX}m -servername $SAVEGAME_NAME
