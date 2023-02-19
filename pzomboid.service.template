@@ -1,0 +1,17 @@
+[Unit]
+Description=Handles Project Zomboid Server Application
+Wants=syslog.target network.target network-online.target
+
+[Service]
+Type=simple
+User=$PZUSER
+Group=$PZUSER
+WorkingDirectory=$PATH
+ExecStart=/usr/local/bin/pzserver
+Sockets=pzomboid.socket
+StandardInput=socket
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

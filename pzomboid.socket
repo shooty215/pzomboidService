@@ -1,5 +1,1 @@
-[Unit]
-PartOf=pzomboid.service
-
-[Socket]
-ListenFIFO=%t/pzomboid.stdin
+[Unit] BindsTo=pzomboid.service [Socket] ListenFIFO=/home//usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin/pzomboid.control FileDescriptorName=control RemoveOnStop=true SocketMode=0660 SocketUser=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin EOL
