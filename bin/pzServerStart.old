@@ -31,9 +31,6 @@ case $FLAG in
   echo "not implemented yet"
   cd ~
   dpkg --add-architecture i386
-  # install steamcmd in deploy.sh to avoid privs
-  #apt-get update
-  #apt-get install steamcmd
   steamcmd
   login anonymous +app_update 380870 +validate +quit
   ;;

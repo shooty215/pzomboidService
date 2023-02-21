@@ -4,10 +4,11 @@ Wants=syslog.target network.target network-online.target
 
 [Service]
 Type=simple
-User=$PZUSER
-Group=$PZUSER
-WorkingDirectory=$PATH
-ExecStart=/usr/local/bin/pzserver
+User=pzuser
+Group=pzuser
+WorkingDirectory=/home/pzuser
+ExecStart=/usr/local/bin/pzserverStart
+ExecStop=/usr/local/bin/pzserverStop
 Sockets=pzomboid.socket
 StandardInput=socket
 StandardOutput=journal

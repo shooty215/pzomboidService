@@ -1,12 +1,11 @@
 #!/usr/bin/bash
 
 echo 'removing all service relevant files from the system...'
-sudo deluser pzuser
 
-rm -rf /home/pzuser/interface
-rm -rf /home/pzuser/pzServiceConfig.json
+rm -rf /home/pzuser/pzomboid.control
 rm -f /usr/local/bin/pzserver
 rm -f /etc/systemd/system/pzomboid.service
 rm -f /etc/systemd/system/pzomboid.socket
-rm -rf /etc/systemd/system/pzomboid.service.d
+
+echo "Don't forget to delete your created user pzuser"
 echo 'done.'
