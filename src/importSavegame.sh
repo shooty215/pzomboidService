@@ -7,12 +7,14 @@ if [ $NAME_SAVEGAME == "" ]; then
     exit 0
 fi
 
-unzip migrate/$NAME_SAVEGAME.zip migrate/import
+mkdir migrate/$NAME_SAVEGAME
 
-cp -r migrate/import/db/$NAME_SAVEGAME.db ~/Zomboid/db
-cp -r migrate/import/Saves/Multiplayer/ ~/Zomboid/Saves/Multiplayer/$NAME_SAVEGAME
-cp -r migrate/import/Server/$NAME_SAVEGAME* ~/Zomboid/Server
+unzip migrate/$NAME_SAVEGAME.zip -d migrate/$NAME_SAVEGAME
 
-rm -r migrate/import/*
+cp -r migrate/$NAME_SAVEGAME/db/$NAME_SAVEGAME.db ~/Zomboid/db
+cp -r migrate/$NAME_SAVEGAME/Saves/Multiplayer/$NAME_SAVEGAME ~/Zomboid/Saves/Multiplayer
+cp -r migrate/$NAME_SAVEGAME/Server/$NAME_SAVEGAME* ~/Zomboid/Server
+
+#rm -r migrate/import
 
 exit 1
