@@ -1,17 +1,18 @@
 #!/usr/bin/bash
 
-unzip migrate/import.zip migrate/import
+NAME_SAVEGAME=$1
 
-cp -r migrate/import/Server ~/Zomboid/
-cp -r migrate/import/db ~/Zomboid/
-cp -r migrate/import/Logs ~/Zomboid/
-cp -r migrate/import/messaging ~/Zomboid/
-cp -r migrate/import/Zomboid/backups ~/Zomboid/
-cp -r migrate/import/Zomboid/Saves ~/Zomboid/
-cp -r migrate/import/Zomboid/Lua ~/Zomboid/
-cp migrate/import/server-console.txt ~/Zomboid/
-cp migrate/import/options.ini ~/Zomboid/
+if [ $NAME_SAVEGAME == "" ]; then
+    echo "Savegame's name not stated, exitting script!"
+    exit 0
+fi
 
-rm -r migrate/import
+unzip migrate/$NAME_SAVEGAME.zip migrate/import
+
+cp -r migrate/import/db/$NAME_SAVEGAME.db ~/Zomboid/db
+cp -r migrate/import/Saves/Multiplayer/ ~/Zomboid/Saves/Multiplayer/$NAME_SAVEGAME
+cp -r migrate/import/Server/$NAME_SAVEGAME* ~/Zomboid/Server
+
+rm -r migrate/import/*
 
 exit 1

@@ -10,7 +10,7 @@ deployBinaries.sh /home/pzuser
 ## Deploy systemd service files and configure unit. Needs privileges.
 deployService.sh
 
-## Install a pzomboid server via the steamcmd as pzuser.
+## Install a pzomboid server via the steamcmd as pzuser. Make sure the user has ownership of the directory. chown -R user:group dir
 su pzuser
 installServer.sh /opt/pzserver
 
