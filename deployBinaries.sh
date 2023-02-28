@@ -20,18 +20,20 @@ if [ $USER_DIR == "" ]; then
 fi
 
 echo ""
-echo 'Performimg repository update.'
+echo 'Adding repository and performimg repository update.'
 echo ""
 
+sudo dpkg --add-architecture i386
 sudo apt-get update
 
 echo ""
 echo 'Installing needed packages.'
-echo "steamcmd, jq"
+echo "steamcmd, jq, zip"
 echo ""
 
 sudo apt install steamcmd -y
 sudo apt install jq -y
+sudo apt install zip -y
 
 echo ""
 echo "Copying binaries to user's home folder."
@@ -43,7 +45,9 @@ echo ""
 echo "Creating default application folder and setting its' ownership."
 echo ""
 
-sudo mkdir /opt/pzserver/
-sudo chown pzuser /opt/server/
+sudo mkdir /opt/pzserver
+sudo chown -R pzuser:pzuser /home/pzuser/src
+sudo chown pzuser:pzuser /opt/pzserver
+
 
 exit 1
