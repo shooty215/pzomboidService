@@ -8,6 +8,10 @@ if [ $NAME_SAVEGAME == "" ]; then
 fi
 
 mkdir migrate/export
+mkdir migrate/export/db
+mkdir migrate/export/Saves
+mkdir migrate/export/Saves/Multiplayer
+mkdir migrate/exportServer
 
 cp -r ~/Zomboid/db/$NAME_SAVEGAME.db migrate/export/db
 cp -r ~/Zomboid/Saves/Multiplayer/$NAME_SAVEGAME migrate/export/Saves/Multiplayer/
@@ -15,6 +19,6 @@ cp -r ~/Zomboid/Server/$NAME_SAVEGAME* migrate/export/Server
 
 zip -r migrate/$NAME_SAVEGAME.zip migrate/export
 
-rm -r migrate/export/*
+rm -r migrate/export
 
 exit 1
