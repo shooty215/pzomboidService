@@ -7,6 +7,8 @@ if [ $NAME_SAVEGAME == "" ]; then
     exit 0
 fi
 
-bash /opt/pzserver/pzserver-start /opt/pzserver $NAME_SAVEGAME
+rm -f ~/Zomboid/db/$NAME_SAVEGAME.db
+rm -rf ~/Zomboid/Saves/Multiplayer/$NAME_SAVEGAME
+rm -rf ~/Zomboid/Server/$NAME_SAVEGAME*
 
 exit 1

@@ -1,6 +1,6 @@
 #!/usr/bin/bash
+
 USER_DIR=$1
-CMD_QUIT='quit'
 
 if [ $USER_DIR == "" ]; then
     echo "No user directory stated, falling back to default: /home/pzuser"
@@ -12,4 +12,8 @@ if [ ${USER_DIR: -1} == "/" ]; then
 fi
 
 cd $USER_DIR
-echo $CMD_QUIT >> /pzuser/pzomboid.control
+echo save >> /pzuser/pzomboid.control
+sleep 10s
+echo quit >> /pzuser/pzomboid.control
+
+exit 1

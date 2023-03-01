@@ -1,4 +1,5 @@
 #!/usr/bin/bash
+
 SERVER_NAME=$1
 PORT_DEFAULT=$2
 PORT_UDP=$3

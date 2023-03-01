@@ -19,9 +19,16 @@ if [ $USER_DIR == "" ]; then
     USER_DIR="/home/pzuser/"
 fi
 
+if [ ${USER_DIR: -1} == "/" ]; then
+    USER_DIR=${USER_DIR::-1} 
+fi
+
 echo ""
 echo 'Adding repository and performimg repository update.'
 echo ""
+
+# all needed packages for bullseye or higher: sudo dpkg --add-architecture i386; sudo apt update; sudo apt install curl wget file tar bzip2 gzip unzip bsdmainutils python3 util-linux ca-certificates binutils bc jq tmux netcat lib32gcc-s1 lib32stdc++6 default-jre rng-tools
+# all needed packages for buster or lower: sudo dpkg --add-architecture i386; sudo apt update; sudo apt install curl wget file tar bzip2 gzip unzip bsdmainutils python3 util-linux ca-certificates binutils bc jq tmux netcat lib32gcc1 lib32stdc++6 default-jre rng-tools
 
 sudo dpkg --add-architecture i386
 sudo apt-get update
@@ -46,7 +53,12 @@ echo "Creating default application folder and setting its' ownership."
 echo ""
 
 sudo mkdir /opt/pzserver
-sudo chown -R pzuser:pzuser /home/pzuser/src
+
+echo ""
+echo "Setting permissions."
+echo ""
+
+sudo chown -R pzuser:pzuser $USER_DIR/src
 sudo chown pzuser:pzuser /opt/pzserver
 
 

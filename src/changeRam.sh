@@ -1,4 +1,5 @@
 #!/usr/bin/bash
+
 APP_DIR=$1
 RAM_MIN=$2
 RAM_MAX=$3

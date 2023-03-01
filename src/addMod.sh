@@ -1,4 +1,5 @@
 #!/usr/bin/bash
+
 SERVER_NAME=$1
 MOD_ADD=$2
 

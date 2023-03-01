@@ -1,4 +1,5 @@
 #!/usr/bin/bash
+
 APP_DIR=$1
 
 if [ $APP_DIR == "" ]; then
@@ -15,4 +16,5 @@ echo ""
 
 cd ~
 steamcmd +force_install_dir $APP_DIR +login anonymous +app_uninstall 380870
+
 exit 1

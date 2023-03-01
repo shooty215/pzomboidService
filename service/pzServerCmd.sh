@@ -2,9 +2,9 @@
 USER=$1
 CMD=$2
 
-if [ $USER_DIR == "" ]; then
+if [ $USER == "" ]; then
     echo "No user directory stated, falling back to default: pzuser"
-    USER_DIR="pzuser"
+    USER="pzuser"
 fi
 
 if [ $CMD == "" ]; then
@@ -15,5 +15,6 @@ fi
 sudo su $USER
 cd /home/$USER
 echo $CMD >> pzomboid.control
+exit
 
 exit 1

@@ -1,5 +1,7 @@
 #!/usr/bin/bash
+
 read -p "Make sure you have created the user pzuser before running this! validate with 'yes' or 'no' : " VAL_CONFIG
+USER_DIR=$1
 
 if [ $VAL_CONFIG == "n" ]; then
     echo "Add user and re-run script."
@@ -9,6 +11,15 @@ elif [ $VAL_CONFIG == "y" ]; then
 else
     echo "y or n! re-run script."
     exit 1
+fi
+
+if [ $USER_DIR == "" ]; then
+    echo "No user directory stated, falling back to default: /home/pzuser/"
+    USER_DIR="/home/pzuser"
+fi
+
+if [ ${USER_DIR: -1} == "/" ]; then
+    USER_DIR=${USER_DIR::-1} 
 fi
 
 echo ''
@@ -23,13 +34,13 @@ echo ''
 echo 'Copying servers start executable to /usr/local/bin/'
 echo ''
 
-sudo cp -f service/pzServerStart.sh /usr/local/bin/pzserver-start
+sudo cp -f service/pzServerStart.sh /opt/pzserver/pzserver-start
 
 echo ''
 echo 'Copying servers stop executable to /usr/local/bin/'
 echo ''
 
-sudo cp -f service/pzServerStop.sh /usr/local/bin/pzserver-stop
+sudo cp -f service/pzServerStop.sh /opt/pzserver/pzserver-stop
 
 echo ''
 echo 'Copying servers command executable to /usr/local/bin/'
@@ -50,12 +61,6 @@ echo ''
 sudo cp -f service/pzomboid.socket /etc/systemd/system/
 
 echo ''
-echo "Copying service config file to user's home folder"
-echo ''
-
-sudo cp -f service/pzomboid.control /home/pzuser/
-
-echo ''
 echo 'Creating full unit file instead of snippet'
 echo ''
 
@@ -69,7 +74,9 @@ echo ''
 
 sudo chmod 664 /etc/systemd/system/pzomboid.service
 sudo chmod 664 /etc/systemd/system/pzomboid.socket
-sudo chmod 664 /home/pzuser/pzomboid.control
+
+sudo chown -R pzuser:pzuser /opt/pzserver/pzServerStart.sh
+sudo chown -R pzuser:pzuser /opt/pzserver/pzServerStop.sh
 
 echo ''
 echo 'Done. Reloading systemctl daemon...'
