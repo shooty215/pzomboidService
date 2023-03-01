@@ -30,12 +30,6 @@ echo ""
 sudo cp -rf src/ $USER_DIR
 
 echo ""
-echo "Creating default application folder and setting its' ownership."
-echo ""
-
-sudo mkdir /opt/pzserver
-
-echo ""
 echo "Setting permissions."
 echo ""
 

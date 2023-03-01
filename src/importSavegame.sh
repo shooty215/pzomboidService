@@ -7,8 +7,6 @@ if [ $NAME_SAVEGAME == "" ]; then
     exit 0
 fi
 
-#mkdir migrate/$NAME_SAVEGAME
-
 unzip migrate/$NAME_SAVEGAME.zip -d migrate/
 
 cp -r migrate/export/db/$NAME_SAVEGAME.db ~/Zomboid/db

@@ -4,38 +4,46 @@
 adduser pzuser
 
 ## Deploy repository binaries to user's home folder, create default server directory
-## and install a needed packages(jq, steamcmd). Needs privileges.
-deployBinaries.sh /home/pzuser
+## And install all required packages. Needs privileges.
+## If the script fails run 'apt install --fix-broken'. Needs privileges.
+bash installRequirements.sh
+
+## Deploy binaries.
+bash deployBinaries.sh USER_DIR
 
 ## Deploy systemd service files and configure unit. Needs privileges.
-deployService.sh
+bash deployService.sh USER_DIR
 
 ## Install a pzomboid server via the steamcmd as pzuser. Make sure the user has ownership of the directory. chown -R user:group dir
-su pzuser
-installServer.sh /opt/pzserver
+su pzuser && cd ~/src
+bash installServer.sh APP_DIR
 
-
+## Create new savegame/server.
+su pzuser && cd ~/src
+bash createSavegame.sh NAME_SAVEGAME APP_DIR
 
 # Uninstalling Process:
 
 ## Delete binaries from user's home folder. Needs privileges.
-bash undeployBinaries.sh /home/pzuser
+bash undeployBinaries.sh USER_DIR
 
 ## Delete systemd service files. Needs privileges.
 bash undeployService.sh
 
 ## Delete server at given path as pzuser.
-bash deleteServer.sh /opt/pzserver
+su pzuser && cd ~/src
+bash deleteServer.sh APP_DIR
 
-## Delete user, folder, steam and jq. Needs privileges.
+## Delete user, folder and steamcmd. Needs privileges.
 deluser pzuser
 rm -r /opt/pzserver
-apt remove steamcmd jq
+apt remove steamcmd
 
 
 
 # Updating Process:
 
 ## Run updating binaries as pzuser.
-bash updateServer.sh /opt/pzserver
+su pzuser && cd ~/src
+bash updateServer.sh APP_DIR
 

@@ -4,7 +4,6 @@ echo ''
 echo 'removing all service relevant files from the system...'
 echo ''
 
-sudo rm -f /home/pzuser/pzomboid.control
 sudo rm -f /usr/local/bin/pzserver-start
 sudo rm -f /usr/local/bin/pzserver-stop
 sudo rm -f /usr/local/bin/pzserver-cmd

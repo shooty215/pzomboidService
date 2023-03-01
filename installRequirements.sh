@@ -41,6 +41,12 @@ echo ''
 echo 'Installed all required packages. See above for errors!'
 echo ''
 
+echo ""
+echo "Creating default application folder and setting its' ownership."
+echo ""
+
+sudo mkdir /opt/pzserver
+
 echo ''
 echo "Don't forget to add a new user for the service! Run 'adduser pzuser' to create the service's default user."
 echo "Though you can start and stop the pzomboidService without touching this user,"
