@@ -1,12 +1,13 @@
 #!/usr/bin/bash
 
 read -p "Make sure you have created the user pzuser before running this! validate with 'yes' or 'no' : " VAL_CONFIG
+
 USER_DIR=$1
 
-if [ $VAL_CONFIG == "n" ]; then
+if [[ $VAL_CONFIG == "n" || $VAL_CONFIG == "N" || $VAL_CONFIG == "no" || $VAL_CONFIG == "No" || $VAL_CONFIG == "NO" ]]; then
     echo "Add user and re-run script."
     exit 1
-elif [ $VAL_CONFIG == "y" ]; then
+elif [[ $VAL_CONFIG == "y" || $VAL_CONFIG == "Y" || $VAL_CONFIG == "yes" || $VAL_CONFIG == "Yes" || $VAL_CONFIG == "YES" ]]; then
     echo "Running deployment."
 else
     echo "y or n! re-run script."
