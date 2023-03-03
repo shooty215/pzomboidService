@@ -4,7 +4,7 @@ NAME_SAVEGAME=$1
 
 if [ $NAME_SAVEGAME == "" ]; then
     echo "Savegame's name not stated, exitting script!"
-    exit 0
+    exit 1
 fi
 
 unzip migrate/$NAME_SAVEGAME.zip -d migrate/
@@ -15,4 +15,5 @@ cp -r migrate/export/Server/$NAME_SAVEGAME* ~/Zomboid/Server
 
 rm -r migrate/export
 
-exit 1
+
+exit 0

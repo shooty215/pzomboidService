@@ -21,4 +21,6 @@ echo "starting server in given directory"
 
 cd $APP_DIR
 /bin/bash start-server.sh -servername $SERVER_NAME
-exit 1
+
+
+exit 0

@@ -32,4 +32,4 @@ sed -i -e 's/'$PORT_DEFAULT_LISTED'/'$PORT_DEFAULT_LISTED_NEW'/g' ~/Zomboid/Serv
 
 sed -i -e 's/'$PORT_UDP_LISTED'/'$PORT_UDP_LISTED_NEW'/g' ~/Zomboid/Server/$SERVER_NAME.ini
 
-exit 1
+exit 0

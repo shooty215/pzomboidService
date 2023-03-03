@@ -1,5 +1,5 @@
 #!/usr/bin/bash
-USER=$1
+PZUSER=$1
 CMD=$2
 
 if [ $USER == "" ]; then
@@ -12,9 +12,6 @@ if [ $CMD == "" ]; then
     exit 1
 fi
 
-sudo su $USER
-cd /home/$USER
-echo $CMD >> pzomboid.control
-exit
+sudo -u $PZUSER bash -c 'cd ~; echo '$CMD' >> pzomboid.control'
 
-exit 1
+exit 0

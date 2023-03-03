@@ -43,4 +43,5 @@ rm config/input.json
 rm config/vmArgs.new.json
 rm config/ProjectZomboid64.new.json
 
-exit 1
+
+exit 0

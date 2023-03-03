@@ -14,7 +14,7 @@ if [[ $VAL_CONFIG_OS == "debian" || $VAL_CONFIG_OS == "Debian" || $VAL_CONFIG_OS
         sudo dpkg --add-architecture i386; sudo apt update; sudo apt install curl wget file tar bzip2 gzip zip unzip bsdmainutils python3 util-linux ca-certificates binutils bc jq tmux netcat lib32gcc-s1 lib32stdc++6 default-jre rng-tools
     else
         echo "Bad input! Exiting..."
-        exit 0
+        exit 1
     fi
 
 elif [[ $VAL_CONFIG_OS == "ubuntu" || $VAL_CONFIG_OS == "Ubuntu" || $VAL_CONFIG_OS == "UBUNTU" ]]; then
@@ -27,7 +27,7 @@ elif [[ $VAL_CONFIG_OS == "ubuntu" || $VAL_CONFIG_OS == "Ubuntu" || $VAL_CONFIG_
         sudo dpkg --add-architecture i386; sudo apt update; sudo apt install curl wget file tar bzip2 gzip zip unzip bsdmainutils python3 util-linux ca-certificates binutils bc jq tmux netcat lib32gcc-s1 lib32stdc++6 libsdl2-2.0-0:i386 steamcmd default-jre rng-tools
     else
         echo "Bad input! Exiting..."
-        exit 0
+        exit 1
     fi
 
 else
@@ -53,4 +53,4 @@ echo "Though you can start and stop the pzomboidService without touching this us
 echo "keep in mind that you have to be able to log into it, to use all of the provided binaries!"
 echo ''
 
-exit 1
+exit 0

@@ -5,7 +5,7 @@ NAME_SAVEGAME_NEW=$2
 
 if [ $NAME_SAVEGAME == "" ]; then
     echo "Savegame's name not stated, exitting script!"
-    exit 0
+    exit 1
 fi
 
 cp -f ~/Zomboid/db/$NAME_SAVEGAME.db ~/Zomboid/db/$NAME_SAVEGAME_NEW.db
@@ -23,4 +23,4 @@ rm -f ~/Zomboid/Server/${NAME_SAVEGAME}_SandboxVars.lua
 rm -f ~/Zomboid/Server/${NAME_SAVEGAME}_spawnpoints.lua
 rm -f ~/Zomboid/Server/${NAME_SAVEGAME}_spawnregions.lua
 
-exit 1
+exit 0

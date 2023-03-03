@@ -4,7 +4,7 @@ NAME_SAVEGAME=$1
 
 if [ $NAME_SAVEGAME == "" ]; then
     echo "Savegame's name not stated, exitting script!"
-    exit 0
+    exit 1
 fi
 
 mkdir migrate/export
@@ -22,4 +22,4 @@ zip -r $NAME_SAVEGAME.zip export/
 
 rm -r export/
 
-exit 1
+exit 0

@@ -20,4 +20,4 @@ MODS_LISTED_NEW=$MODS_LISTED$MOD_ADD";"
 
 sed -i -e 's/'$MODS_LISTED'/'$MODS_LISTED_NEW'/g' ~/Zomboid/Server/$SERVER_NAME.ini
 
-exit
+exit 0

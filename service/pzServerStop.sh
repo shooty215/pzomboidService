@@ -16,4 +16,4 @@ echo save >> /pzuser/pzomboid.control
 sleep 10s
 echo quit >> /pzuser/pzomboid.control
 
-exit 1
+exit 0

@@ -17,4 +17,4 @@ MOD_DELETE=$MOD_DELETE";"
 
 sed -i -e 's/'$MOD_DELETE'//g' ~/Zomboid/Server/$SERVER_NAME.ini
 
-exit 1
+exit 0

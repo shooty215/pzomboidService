@@ -24,10 +24,6 @@ if [ ${USER_DIR: -1} == "/" ]; then
 fi
 
 echo ''
-echo "Create service's and server's user - input needed. CHOOSE SECURE PASSWORD!"
-echo ''
-
-echo ''
 echo 'Deploying all service relevant files...'
 echo ''
 
@@ -35,31 +31,31 @@ echo ''
 echo 'Copying servers start executable to /usr/local/bin/'
 echo ''
 
-sudo cp -f service/pzServerStart.sh /opt/pzserver/pzserver-start
+sudo cp -f ../service/pzServerStart.sh /opt/pzserver/pzserver-start
 
 echo ''
 echo 'Copying servers stop executable to /usr/local/bin/'
 echo ''
 
-sudo cp -f service/pzServerStop.sh /opt/pzserver/pzserver-stop
+sudo cp -f ../service/pzServerStop.sh /opt/pzserver/pzserver-stop
 
 echo ''
 echo 'Copying servers command executable to /usr/local/bin/'
 echo ''
 
-sudo cp -f service/pzServerCmd.sh /usr/local/bin/pzserver-cmd
+sudo cp -f ../service/pzServerCmd.sh /usr/local/bin/pzserver-cmd
 
 echo ''
 echo 'Copying service file to /etc/systemd/system/'
 echo ''
 
-sudo cp -f service/pzomboid.service /etc/systemd/system/
+sudo cp -f ../service/pzomboid.service /etc/systemd/system/
 
 echo ''
 echo 'Copying socket file to /etc/systemd/system/'
 echo ''
 
-sudo cp -f service/pzomboid.socket /etc/systemd/system/
+sudo cp -f ../service/pzomboid.socket /etc/systemd/system/
 
 echo ''
 echo 'Creating full unit file instead of snippet'
@@ -93,4 +89,5 @@ echo 'If your not using /opt/pzserver/ as install directory and/or pzuser as res
 echo 'Also take a look at the README.md in the repository BEFORE running the service!'
 echo ''
 
-exit 1
+
+exit 0
