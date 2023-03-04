@@ -1,0 +1,14 @@
+[Unit]
+BindsTo=pzomboid.service
+
+[Socket]
+ListenFIFO=/home/pzuser/pzomboid.control
+FileDescriptorName=.control
+RemoveOnStop=true
+SocketMode=0750
+SocketUser=pzuser
+SocketGroup=pzuser
+Accept=no
+
+[Install]
+WantedBy=sockets.target
