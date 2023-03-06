@@ -3,7 +3,8 @@ USER_NAME='pzuser'
 USER_GROUP='pzuser'
 USER_HOME_DIR='/home/pzuser'
 APP_DIR='/opt/pzserver'
-
+CONF_SERVICE_DIR='/etc/pzomboidService'
+CONF_SERVER_DIR='/home/pzuser/etc'
 PATH_INSTALL_SERVER='/home/pzuser/src/installServer.sh /opt/pzserver'
 
 # create user, group
@@ -15,15 +16,21 @@ sudo dpkg --add-architecture i386; sudo apt update; sudo apt install curl wget f
 # install steamcmd
 sudo apt install steamcmd -y
 
-# create app directory
+# create app and config directory
 sudo mkdir $APP_DIR
+sudo mkdir $CONF_SERVICE_DIR
+sudo mkdir $CONF_SERVER_DIR
 
 # copy repositories binaries to target folder
-sudo cp -rf src/ $USER_DIR
+sudo cp -rf bin/ $USER_DIR
+sudo cp -rf conf/service.conf $CONF_SERVICE_DIR
+sudo cp -rf conf/server.conf $CONF_SERVER_DIR
 
 # set permissions for pzusers files and application directory
-sudo chown -R $USER_NAME:$USER_GROUP $USER_DIR/src
+sudo chown -R $USER_NAME:$USER_GROUP $USER_DIR/bin
 sudo chown -R $USER_NAME:$USER_GROUP $APP_DIR
+sudo chown -R $USER_NAME:$USER_GROUP $CONF_SERVICE_DIR
+sudo chown -R $USER_NAME:$USER_GROUP $CONF_SERVER_DIR
 
 # copy service relevant files
 sudo cp -f service/pzServerStart.sh $APP_DIR/pzserver-start

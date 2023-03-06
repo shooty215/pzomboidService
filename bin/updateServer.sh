@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-APP_DIR=$1
+. /home/pzuser/etc/server.conf
 
 if [ $APP_DIR == "" ]; then
     echo "No application directory stated, falling back to default: /opt/pzserver/"
