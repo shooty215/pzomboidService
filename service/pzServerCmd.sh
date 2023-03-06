@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-. /home/pzuser/etc/server.conf
+. /etc/pzomboidService/service.conf
 
 CMD=$1
 

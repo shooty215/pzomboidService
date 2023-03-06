@@ -5,7 +5,7 @@ USER_HOME_DIR='/home/pzuser'
 APP_DIR='/opt/pzserver'
 CONF_SERVICE_DIR='/etc/pzomboidService'
 CONF_SERVER_DIR='/home/pzuser/etc'
-PATH_INSTALL_SERVER='/home/pzuser/src/installServer.sh /opt/pzserver'
+PATH_INSTALL_SERVER='/home/pzuser/bin/installServer.sh /opt/pzserver'
 
 # create user, group
 sudo adduser --system --group --disabled-password --home $USER_HOME_DIR --quiet $USER_NAME
@@ -22,12 +22,12 @@ sudo mkdir $CONF_SERVICE_DIR
 sudo mkdir $CONF_SERVER_DIR
 
 # copy repositories binaries to target folder
-sudo cp -rf bin/ $USER_DIR
+sudo cp -r bin/ $USER_HOME_DIR
 sudo cp -rf conf/service.conf $CONF_SERVICE_DIR
 sudo cp -rf conf/server.conf $CONF_SERVER_DIR
 
 # set permissions for pzusers files and application directory
-sudo chown -R $USER_NAME:$USER_GROUP $USER_DIR/bin
+sudo chown -R $USER_NAME:$USER_GROUP $USER_HOME_DIR/bin
 sudo chown -R $USER_NAME:$USER_GROUP $APP_DIR
 sudo chown -R $USER_NAME:$USER_GROUP $CONF_SERVICE_DIR
 sudo chown -R $USER_NAME:$USER_GROUP $CONF_SERVER_DIR
@@ -48,13 +48,13 @@ sudo cp -f service/pzServerCmd.sh /usr/local/bin/pzserver-cmd
 sudo chmod 664 /etc/systemd/system/pzomboid.service
 sudo chmod 664 /etc/systemd/system/pzomboid.socket
 
-sudo chown -R $USER_NAME:$USER_GROUP $APP_DIR/pzServerStart.sh
-sudo chown -R $USER_NAME:$USER_GROUP $APP_DIR/pzServerStop.sh
+sudo chown -R $USER_NAME:$USER_GROUP $APP_DIR/pzserver-start
+sudo chown -R $USER_NAME:$USER_GROUP $APP_DIR/pzserver-stop
 
 # reload systemctl daemon
 sudo systemctl daemon-reload
 
 # install pzomboid server to the application's directory
-sudo -u $PZUSER bash -c $PATH_INSTALL_SERVER
+#sudo -u $USER_NAME bash -c $PATH_INSTALL_SERVER
 
 exit 0
