@@ -8,7 +8,7 @@ CONF_SERVER_DIR='/home/pzuser/etc'
 PATH_INSTALL_SERVER='/home/pzuser/bin/installServer.sh /opt/pzserver'
 
 # create user, group
-sudo adduser --system --group --disabled-password --home $USER_HOME_DIR --quiet $USER_NAME
+sudo adduser --system --group --disabled-password --shell /bin/bash --home $USER_HOME_DIR --quiet $USER_NAME
 
 # install all required packages
 sudo dpkg --add-architecture i386; sudo apt update; sudo apt install curl wget file tar bzip2 gzip zip unzip bsdmainutils python3 util-linux ca-certificates binutils bc jq tmux netcat lib32gcc-s1 lib32stdc++6 default-jre rng-tools
