@@ -1,8 +1,10 @@
 #!/usr/bin/bash
-PZUSER=$1
-CMD=$2
 
-if [ $USER == "" ]; then
+. /home/pzuser/etc/server.conf
+
+CMD=$1
+
+if [ $USER_NAME == "" ]; then
     echo "No user directory stated, falling back to default: pzuser"
     USER="pzuser"
 fi
