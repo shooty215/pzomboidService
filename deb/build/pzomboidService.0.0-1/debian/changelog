@@ -1,0 +1,13 @@
+pzomboidService (0.0-1) dev; urgency=low
+
+  [ Shooty215 ]
+  * Changes to installer 
+
+ -- Shooty215 <test@test.com>
+
+test (1.0-1) stable; urgency=low
+
+  [ Shooty215 ]
+  * Wonderful program to print the name ;)
+
+ -- Shooty215 <test@test.com>

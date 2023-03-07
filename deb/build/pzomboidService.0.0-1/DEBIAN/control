@@ -1,8 +1,0 @@
-Package: pzomboidService
-Version: 0.0-1
-Build-Depends: curl, wget, file, tar, bzip2, gzip, zip, unzip, bsdmainutils, python3, util-linux, ca-certificates, binutils, bc, jq, tmux netcat, lib32gcc-s1, lib32stdc++6, default-jre, rng-tools
-Section: games
-Priority: optional
-Architecture: all
-Maintainer: Shooty215 <b.heinr@web.de>
-Description: Application provides a systemd service, handling a Project Zomboid-Steamcmd-Server.
