@@ -3,7 +3,7 @@ The PZomboid Service comes with a variaty of different bash files to manage your
 Here's a how to use them:
 
 ## USAGE:
-Run all binaries in src/ as pzuser and therefore without privileges.
+Run all binaries in bin/ as pzuser and therefore without privileges.
 
 ### Add a mod to savegame in /home/pzuser/etc/server.conf.
 bash addMod.sh MOD

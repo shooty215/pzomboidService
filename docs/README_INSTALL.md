@@ -3,6 +3,7 @@
 ## Fresh install
 bash install.sh
 
+# OR Debugging Process:
 
 ## Create a user for the pzomboid server.
 adduser pzuser
@@ -10,6 +11,7 @@ adduser pzuser
 ## Deploy repository binaries to user's home folder, create default server directory
 ## And install all required packages. Needs privileges.
 ## If the script fails run 'apt install --fix-broken'. Needs privileges.
+cd install
 bash installRequirements.sh
 
 ## Deploy binaries.

@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-. /etc/pzomboidService/service.conf
+. /etc/pzomboidservice/service.conf
 
 CMD=$1
 
@@ -14,6 +14,6 @@ if [ $CMD == "" ]; then
     exit 1
 fi
 
-sudo -u $PZUSER bash -c 'cd ~; echo '$CMD' >> pzomboid.control'
+sudo -u $USER_NAME bash -c 'cd ~; echo '$CMD' >> pzomboid.control'
 
 exit 0

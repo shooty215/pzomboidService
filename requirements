@@ -1,0 +1,26 @@
+build:
+debhelper-compat == 13
+debhelper >== 9
+
+dependencies:
+curl >== 7.87.0
+wget >== 1.21
+file >== 5.39
+tar >== 1.34
+bzip2 >== 1.0.8
+gzip >== 1.10
+zip >== 3.0
+unzip >== 6.00
+bsdmainutils >== 12.1.7
+python3 >== 3.8.0
+util-linux >== 2.36.1-8
+ca-certificates >== 20210119
+binutils >== 2.37.90.20220130-2
+bc >== 1.07.1-2
+jq >== 1.6-2.1
+tmux >== 3.1
+netcat >== 1.10-46
+lib32gcc-s1 >== 11.2.0-18
+lib32stdc++6 >== 11.2.0-18
+default-jre >== 2:1.11-72
+rng-tools >==  5migrate1

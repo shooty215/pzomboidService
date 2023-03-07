@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-. /etc/pzomboidService/service.conf
+. /etc/pzomboidservice/service.conf
 
 echo "starting game server in given directory"
 

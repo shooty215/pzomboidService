@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 . /home/pzuser/etc/server.conf
 

@@ -24,10 +24,11 @@ if [ ${USER_DIR: -1} == "/" ]; then
 fi
 
 echo ""
-echo "Copying binaries to user's home folder."
+echo "Copying binaries and configs to user's home folder."
 echo ""
 
 sudo cp -rf ../bin/ $USER_DIR
+sudo cp -rf ../etc/ $USER_DIR
 
 echo ""
 echo "Setting permissions."

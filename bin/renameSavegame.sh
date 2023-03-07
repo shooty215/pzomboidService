@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 NAME_SAVEGAME_RENAME=$1
 NAME_SAVEGAME_RENAME_NEW=$2

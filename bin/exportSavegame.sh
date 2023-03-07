@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 NAME_SAVEGAME_EXPORT=$1
 

@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-. /etc/pzomboidService/service.conf
+. /etc/pzomboidservice/service.conf
 
 if [ ${USER_HOME_DIR: -1} == "/" ]; then
     USER_HOME_DIR=${USER_HOME_DIR::-1} 

@@ -12,3 +12,4 @@ echo ""
 
 cd $USER_DIR
 sudo rm -rf $USER_DIR/bin/
+sudo rm -rf $USER_DIR/etc/
