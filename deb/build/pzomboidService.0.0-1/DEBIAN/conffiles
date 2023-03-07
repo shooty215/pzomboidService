@@ -1,1 +1,2 @@
-/etc/pzomboidService/server.conf
+/etc/pzomboidService/service.conf
+/home/pzuser/etc/server.conf

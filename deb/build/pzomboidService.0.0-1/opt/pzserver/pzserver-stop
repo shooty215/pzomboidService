@@ -1,17 +1,14 @@
 #!/usr/bin/bash
 
-USER_DIR=$1
+. /etc/pzomboidService/service.conf
 
-if [ $USER_DIR == "" ]; then
-    echo "No user directory stated, falling back to default: /home/pzuser"
-    USER_DIR="/home/pzuser"
+if [ ${USER_HOME_DIR: -1} == "/" ]; then
+    USER_HOME_DIR=${USER_HOME_DIR::-1} 
 fi
 
-if [ ${USER_DIR: -1} == "/" ]; then
-    USER_DIR=${USER_DIR::-1} 
-fi
+echo 'saving and then quitting game server'
 
-cd $USER_DIR
+cd $USER_HOME_DIR
 echo save >> /pzuser/pzomboid.control
 sleep 10s
 echo quit >> /pzuser/pzomboid.control

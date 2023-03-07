@@ -1,11 +1,12 @@
 #!/usr/bin/bash
 
-SERVER_NAME=$1
-MOD_ADD=$2
+. /home/pzuser/etc/server.conf
 
-if [ $SERVER_NAME == "" ]; then
+MOD_ADD=$1
+
+if [ $SAVEGAME_NAME == "" ]; then
     echo "Server's name not stated, falling back to default: servertest-mods"
-    SERVER_NAME="servertest-mods"
+    SAVEGAME_NAME="servertest-mods"
 fi
 
 if [ $MOD_ADD == "" ]; then
@@ -13,11 +14,11 @@ if [ $MOD_ADD == "" ]; then
     exit 1
 fi
 
-sed -i -e 's/ Example: WorkshopItems=514427485;513111049//g' ~/Zomboid/Server/$SERVER_NAME.ini
+sed -i -e 's/ Example: WorkshopItems=514427485;513111049//g' ~/Zomboid/Server/$SAVEGAME_NAME.ini
 
-MODS_LISTED=$(cat ~/Zomboid/Server/$SERVER_NAME.ini | grep WorkshopItems=)
+MODS_LISTED=$(cat ~/Zomboid/Server/$SAVEGAME_NAME.ini | grep WorkshopItems=)
 MODS_LISTED_NEW=$MODS_LISTED$MOD_ADD";"
 
-sed -i -e 's/'$MODS_LISTED'/'$MODS_LISTED_NEW'/g' ~/Zomboid/Server/$SERVER_NAME.ini
+sed -i -e 's/'$MODS_LISTED'/'$MODS_LISTED_NEW'/g' ~/Zomboid/Server/$SAVEGAME_NAME.ini
 
 exit 0

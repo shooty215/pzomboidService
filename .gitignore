@@ -1,1 +1,3 @@
 *.zip
+.gitignore
+.del_all.sh

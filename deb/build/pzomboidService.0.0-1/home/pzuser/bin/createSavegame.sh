@@ -1,10 +1,11 @@
 #!/usr/bin/bash
 
-NAME_SAVEGAME=$1
-APP_DIR=$2
+. /home/pzuser/etc/server.conf
 
-if [ $NAME_SAVEGAME == "" ]; then
-    echo "Savegame's name not stated, exitting script!"
+SAVEGAME_NAME_CREATE=$1
+
+if [ $SAVEGAME_NAME == "" ]; then
+    echo "Savegame's name not stated, exiting script!"
     exit 1
 fi
 
@@ -14,7 +15,7 @@ if [ $APP_DIR == "" ]; then
 fi
 
 cd $APP_DIR
-bash start-server.sh -servername $NAME_SAVEGAME
+bash start-server.sh -servername $SAVEGAME_NAME_CREATE
 
 
 exit 0

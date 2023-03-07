@@ -1,13 +1,9 @@
 #!/usr/bin/bash
 
-APP_DIR=$1
-RAM_MIN=$2
-RAM_MAX=$3
+. /home/pzuser/etc/server.conf
 
-if [ $APP_DIR == "" ]; then
-    echo "No application directory stated, falling back to default: /opt/pzserver/"
-    APP_DIR="/opt/pzserver/"
-fi
+RAM_MIN=$1
+RAM_MAX=$2
 
 if [ $RAM_MIN == "" ]; then
     echo "No minimum ram set, falling back to default: 4"
