@@ -2,7 +2,7 @@
 
 NAME_SAVEGAME_IMPORT=$1
 
-if [ $NAME_SAVEGAME == "" ]; then
+if [ $NAME_SAVEGAME_IMPORT == "" ]; then
     echo "Savegame's name not stated, exitting script!"
     exit 1
 fi

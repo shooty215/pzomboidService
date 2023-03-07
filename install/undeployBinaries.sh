@@ -11,4 +11,4 @@ echo "Deleting binaries from user's home folder."
 echo ""
 
 cd $USER_DIR
-sudo rm -rf src/
+sudo rm -rf $USER_DIR/bin/

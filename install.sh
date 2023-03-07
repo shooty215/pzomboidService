@@ -5,7 +5,7 @@ USER_HOME_DIR='/home/pzuser'
 APP_DIR='/opt/pzserver'
 CONF_SERVICE_DIR='/etc/pzomboidService'
 CONF_SERVER_DIR='/home/pzuser/etc'
-PATH_INSTALL_SERVER='/home/pzuser/bin/installServer.sh /opt/pzserver'
+#PATH_INSTALL_SERVER='cd ~ && /home/pzuser/bin/installServer.sh /opt/pzserver'
 
 # create user, group
 sudo adduser --system --group --disabled-password --shell /bin/bash --home $USER_HOME_DIR --quiet $USER_NAME

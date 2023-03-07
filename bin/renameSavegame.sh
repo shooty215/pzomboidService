@@ -3,8 +3,13 @@
 NAME_SAVEGAME_RENAME=$1
 NAME_SAVEGAME_RENAME_NEW=$2
 
-if [ $NAME_SAVEGAME_RENAME_RENAME == "" ]; then
+if [ $NAME_SAVEGAME_RENAME == "" ]; then
     echo "Savegame's name not stated, exiting script!"
+    exit 1
+fi
+
+if [ $NAME_SAVEGAME_RENAME_NEW == "" ]; then
+    echo "Savegame's new name not stated, exiting script!"
     exit 1
 fi
 

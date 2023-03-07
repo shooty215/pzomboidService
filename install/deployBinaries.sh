@@ -27,13 +27,13 @@ echo ""
 echo "Copying binaries to user's home folder."
 echo ""
 
-sudo cp -rf ../src/ $USER_DIR
+sudo cp -rf ../bin/ $USER_DIR
 
 echo ""
 echo "Setting permissions."
 echo ""
 
-sudo chown -R pzuser:pzuser $USER_DIR/src
+sudo chown -R pzuser:pzuser $USER_DIR/bin
 sudo chown -R pzuser:pzuser /opt/pzserver
 
 

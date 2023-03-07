@@ -1,5 +1,9 @@
 # Install Process:
 
+## Fresh install
+bash install.sh
+
+
 ## Create a user for the pzomboid server.
 adduser pzuser
 
@@ -15,11 +19,11 @@ bash deployBinaries.sh USER_DIR
 bash deployService.sh USER_DIR
 
 ## Install a pzomboid server via the steamcmd as pzuser. Make sure the user has ownership of the directory. chown -R user:group dir
-su pzuser && cd ~/src
+su pzuser && cd ~/bin
 bash installServer.sh APP_DIR
 
 ## Create new savegame/server.
-su pzuser && cd ~/src
+su pzuser && cd ~/bin
 bash createSavegame.sh NAME_SAVEGAME APP_DIR
 
 # Uninstalling Process:
@@ -31,7 +35,7 @@ bash undeployBinaries.sh USER_DIR
 bash undeployService.sh
 
 ## Delete server at given path as pzuser.
-su pzuser && cd ~/src
+su pzuser && cd ~/bin
 bash deleteServer.sh APP_DIR
 
 ## Delete user, folder and steamcmd. Needs privileges.
@@ -44,6 +48,6 @@ apt remove steamcmd
 # Updating Process:
 
 ## Run updating binaries as pzuser.
-su pzuser && cd ~/src
+su pzuser && cd ~/bin
 bash updateServer.sh APP_DIR
 
