@@ -3,6 +3,32 @@
 dpkg -i pzomboidservice_*.*.*_amd64.deb
 dpkg -r pzomboidservice_*.*.*_amd64.deb
 
+# FIRST-TIME-SETUP
+
+  [1]:
+    dpkg -i pzomboidservice_*.*.*_amd64.deb
+  [2]:
+    su pzuser
+    cd ~/bin
+  [3]:
+    bash createSavegame.sh main
+    type when savegame fully started on server: quit
+
+    -- or import existing savegame in migrate/NAME.zip --
+
+    bash importSavegame.sh NAME
+  [3.1]:
+    incease of import:
+    change savegame name in /etc/pzomboidservice/service.conf AND /home/pzuser/etc/server.conf
+
+    -- or simply rename imported savegame --
+
+    bash renameSavegame.sh NAME main
+  [4]:
+    systemctl start pzomboid.socket
+
+# MANPAGE
+
 # NAME
 
 pzomboidservice
