@@ -14,6 +14,8 @@ if [ $MOD_DELETE == "" ]; then
     exit 1
 fi
 
+echo $'\ndeleting mod: '$MOD_DELETE$'\n'
+
 MOD_DELETE=$MOD_DELETE";"
 
 sed -i -e 's/'$MOD_DELETE'//g' ~/Zomboid/Server/$SAVEGAME_NAME.ini

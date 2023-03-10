@@ -7,6 +7,8 @@ if [ $NAME_SAVEGAME == "" ]; then
     exit 1
 fi
 
+echo $'\nexporting savegame: '$NAME_SAVEGAME_EXPORT$'\n'
+
 mkdir migrate/export
 mkdir migrate/export/db
 mkdir migrate/export/Saves

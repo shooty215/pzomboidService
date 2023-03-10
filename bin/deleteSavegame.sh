@@ -7,6 +7,8 @@ if [ $NAME_SAVEGAME_DELETE == "" ]; then
     exit 1
 fi
 
+echo $'\ndeleting savegame: '$NAME_SAVEGAME_DELETE$'\n'
+
 rm -f ~/Zomboid/db/$NAME_SAVEGAME_DELETE.db
 rm -rf ~/Zomboid/Saves/Multiplayer/$NAME_SAVEGAME_DELETE
 rm -rf ~/Zomboid/Server/$NAME_SAVEGAME_DELETE*

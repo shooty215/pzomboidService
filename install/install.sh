@@ -34,8 +34,8 @@ sudo mkdir $ZOMBOID_DB_DIR
 
 # copy repositories binaries to target folder
 sudo cp -r bin/ $USER_HOME_DIR
-sudo cp -rf conf/service.conf $CONF_SERVICE_DIR
-sudo cp -rf conf/server.conf $CONF_SERVER_DIR
+sudo cp -rf ../conf/service.conf $CONF_SERVICE_DIR
+sudo cp -rf ../conf/server.conf $CONF_SERVER_DIR
 
 # set permissions for pzusers files and application directory
 sudo chown -R $USER_NAME:$USER_GROUP $USER_HOME_DIR/bin
@@ -54,7 +54,7 @@ sudo cp -f service/pzomboid.socket /etc/systemd/system/
 sudo systemctl edit pzomboid.service --force --full
 
 # copy command binearies
-sudo cp -f service/pzServerCmd.sh /usr/local/bin/pzserver-cmd
+sudo cp -f ../service/pzServerCmd.sh /usr/local/bin/pzserver-cmd
 
 # set permissions for service files
 sudo chmod 664 /etc/systemd/system/pzomboid.service

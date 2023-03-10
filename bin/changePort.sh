@@ -18,6 +18,8 @@ if [ $PORT_UDP == "" ]; then
     PORT_UDP=16262
 fi
 
+echo $'\nchanging ports: DefaultPort='$PORT_DEFAULT'UDPPort='$PORT_UDP$'\n'
+
 PORT_DEFAULT_LISTED=$(cat ~/Zomboid/Server/$SAVEGAME_NAME.ini | grep DefaultPort=)
 PORT_DEFAULT_LISTED_NEW="DefaultPort="$PORT_DEFAULT
 

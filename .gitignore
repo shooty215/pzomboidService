@@ -1,4 +1,3 @@
-servertest-mods.zip
-.gitignore
+*.zip
 .del_all.sh
-deb/build/pzomboidservice.0.0.2/
+deb/build*

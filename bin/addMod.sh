@@ -14,6 +14,8 @@ if [ $MOD_ADD == "" ]; then
     exit 1
 fi
 
+echo $'\nadding mod(s): '$MOD_ADD$'\n'
+
 sed -i -e 's/ Example: WorkshopItems=514427485;513111049//g' ~/Zomboid/Server/$SAVEGAME_NAME.ini
 
 MODS_LISTED=$(cat ~/Zomboid/Server/$SAVEGAME_NAME.ini | grep WorkshopItems=)

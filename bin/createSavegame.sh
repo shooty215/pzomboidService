@@ -14,6 +14,9 @@ if [ $APP_DIR == "" ]; then
     exit 1
 fi
 
+echo $'\ncreating savegame: '$SAVEGAME_NAME_CREATE$'\n'
+
+
 cd $APP_DIR
 bash start-server.sh -servername $SAVEGAME_NAME_CREATE
 

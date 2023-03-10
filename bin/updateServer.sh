@@ -7,7 +7,7 @@ if [ $APP_DIR == "" ]; then
     $APP_DIR="/opt/pzserver/"
 fi
 
-echo "updating server in given directory"
+echo $'\nupdating server in: '$APP_DIR$'\n'
 
 cd ~
 steamcmd +force_install_dir $APP_DIR +login anonymous +app_update 380870 validate +quit

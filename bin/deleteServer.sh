@@ -6,6 +6,8 @@ if [ $APP_DIR_DELETE == "" ]; then
     echo "No application directory stated, exiting script!"
 fi
 
+echo $'\ndeleting server at: '$APP_DIR_DELETE$'\n'
+
 echo "deleting server in given directory"
 echo ""
 echo ""

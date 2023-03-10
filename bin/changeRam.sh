@@ -19,6 +19,9 @@ if [ ${APP_DIR: -1} == "/" ]; then
     APP_DIR=${APP_DIR::-1} 
 fi
 
+echo $'\nchanging min and max ram settings for the server: Min='$RAM_MIN'Max='$RAM_MAX$'\n'
+
+
 JSON_STRING=$( jq -n '{ "vmArgs":[ "-Xms'$RAM_MIN'g", "-Xmx'$RAM_MAX'g" ] }' )
 
 echo $JSON_STRING > config/input.json

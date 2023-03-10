@@ -13,6 +13,8 @@ if [ $NAME_SAVEGAME_RENAME_NEW == "" ]; then
     exit 1
 fi
 
+echo $'\nrenaming savegame: Current='$NAME_SAVEGAME_RENAME'New='$NAME_SAVEGAME_RENAME$'\n'
+
 cp -f ~/Zomboid/db/$NAME_SAVEGAME_RENAME.db ~/Zomboid/db/$NAME_SAVEGAME_RENAME_NEW.db
 cp -rf ~/Zomboid/Saves/Multiplayer/$NAME_SAVEGAME_RENAME ~/Zomboid/Saves/Multiplayer/$NAME_SAVEGAME_RENAME_NEW
 

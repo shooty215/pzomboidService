@@ -7,6 +7,8 @@ if [ $NAME_SAVEGAME_IMPORT == "" ]; then
     exit 1
 fi
 
+echo $'\nimporting savegame: '$NAME_SAVEGAME_IMPORT$'\n'
+
 unzip migrate/$NAME_SAVEGAME_IMPORT.zip -d migrate/
 
 cp -r migrate/export/db/$NAME_SAVEGAME_IMPORT.db ~/Zomboid/db

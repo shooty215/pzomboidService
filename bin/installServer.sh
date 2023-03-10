@@ -8,7 +8,8 @@ if [ $APP_DIR_INSTALL == "" ]; then
     APP_DIR_INSTALL="/opt/pzserver/"
 fi
 
-echo "installing server in given directory"
+echo $'\ninstalling server at: '$APP_DIR_INSTALL$'\n'
+
 
 cd ~
 /usr/games/steamcmd +force_install_dir $APP_DIR_INSTALL +login anonymous +app_update 380870 validate +quit

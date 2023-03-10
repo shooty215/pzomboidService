@@ -14,6 +14,8 @@ if [ $CMD == "" ]; then
     exit 1
 fi
 
+echo $'\nexecuting command in server shell: '$CMD$'\n'
+
 sudo -u $USER_NAME bash -c 'cd ~; echo '$CMD' >> pzomboid.control'
 
 exit 0
