@@ -6,6 +6,8 @@ dpkg -r pzomboidservice_*.*.*_amd64.deb
 # FIRST-TIME-SETUP
 
   [1]:
+    dpkg --add-architecture i386
+    apt update
     dpkg -i pzomboidservice_*.*.*_amd64.deb
   [2]:
     su pzuser
